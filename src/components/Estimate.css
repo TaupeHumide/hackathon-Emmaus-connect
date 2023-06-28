@@ -27,6 +27,7 @@
   border-bottom: 1px solid;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 .estimate_button:hover {

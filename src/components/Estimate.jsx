@@ -1,9 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import "./Estimate.css";
 
 function Estimate() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/form");
+  };
   return (
     <div className="estimate_main_div">
-      <h1 className="estimate_title">Estimation</h1>
+      <h1 className="estimate_title" onClick={handleClick}>
+        Estimation
+      </h1>
       <button className="estimate_button">
         <img src="../../public/desktop_icon.jpg" alt="" />
       </button>

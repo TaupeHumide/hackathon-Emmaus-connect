@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Buttons from "./Buttons";
+import "./Form.css";
 
 export default function Form() {
   const ramPoints = {
@@ -47,40 +48,21 @@ export default function Form() {
 
   return (
     <div>
-      <Buttons />
-      <form className="input" onSubmit={handleSubmit}>
-        Do you have an imei number ? &nbsp;
-        <input
-          type="radio"
-          id="imei"
-          name="imeiOption"
-          value="Yes"
-          onChange={(e) =>
-            setData({ ...data, imei: e.target.value, showImeiNum: true })
-          }
-        ></input>
-        <label htmlFor="ImeiYes"> Oui</label>
-        <input
-          id="imei"
-          type="radio"
-          value="No"
-          name="imeiOption"
-          onChange={(e) =>
-            setData({ ...data, imei: e.target.value, showImeiNum: false })
-          }
-        ></input>
-        <label htmlFor="ImeiNo"> Non</label>
-        <br />
-        {data.showImeiNum ? (
-          <div>
-            <label htmlFor="imeiNum">Numero Imei:</label> &nbsp;
+      <Buttons className="Boutons" />
+      <div className="container">
+        <div className="form-container">
+          <form className="input" onSubmit={handleSubmit}>
+            Do you have an imei number ? &nbsp;
             <input
-              id="imeiNum"
-              placeholder="imeiNum"
-              type="text"
-              name="imeiNum"
-              onChange={(e) => setData({ ...data, imeiNum: e.target.value })}
+              type="radio"
+              id="imei"
+              name="imeiOption"
+              value="Yes"
+              onChange={(e) =>
+                setData({ ...data, imei: e.target.value, showImeiNum: true })
+              }
             ></input>
+<<<<<<< HEAD
           </div>
         ) : null}
         <br />
@@ -211,6 +193,128 @@ export default function Form() {
         <br />
         <button type="submit">Valider</button>
       </form>
+=======
+            <label htmlFor="ImeiYes"> Oui</label>
+            <input
+              id="imei"
+              type="radio"
+              value="No"
+              name="imeiOption"
+              onChange={(e) =>
+                setData({ ...data, imei: e.target.value, showImeiNum: false })
+              }
+            ></input>
+            <label htmlFor="ImeiNo"> Non</label>
+            <br />
+            {data.showImeiNum ? (
+              <div>
+                <label htmlFor="imeiNum">Numero Imei:</label> &nbsp;
+                <input
+                  id="imeiNum"
+                  placeholder="imeiNum"
+                  type="text"
+                  name="imeiNum"
+                  onChange={(e) =>
+                    setData({ ...data, imeiNum: e.target.value })
+                  }
+                ></input>
+              </div>
+            ) : null}
+            <br />
+            <label htmlFor="marque">Marque:</label>
+            &nbsp;
+            <select
+              id="marque"
+              name="marque"
+              type="text"
+              onChange={(e) => setData({ ...data, marque: e.target.value })}
+            >
+              <option value="Apple">Apple</option>
+              <option value="Apple">Android</option>
+            </select>
+            <br />
+            <label htmlFor="model">Modèle:</label> &nbsp;
+            <input
+              id="model"
+              placeholder="Modèle"
+              type="text"
+              name="model"
+              onChange={(e) => setData({ ...data, model: e.target.value })}
+            ></input>
+            <br />
+            <label htmlFor="ram">RAM:</label> &nbsp;
+            <select
+              id="ram"
+              type="text"
+              name="ram"
+              onChange={(e) => {
+                const selectedRam = e.target.value;
+                const ramPointsValue = ramPoints[selectedRam];
+                setData({
+                  ...data,
+                  ram: selectedRam,
+                  ramPoints: ramPointsValue,
+                });
+              }}
+            >
+              <option defaultValue="">Selectionnez la valeur de la RAM</option>
+              <option value="">1 Go</option>
+              <option value="">2 Go</option>
+              <option value="">3 Go</option>
+              <option value="">4 Go</option>
+              <option value="">6 Go</option>
+              <option value="">8 Go</option>
+              <option value="">12 Go</option>
+              <option value="">16 Go</option>
+              <option value="">32 Go</option>
+              <option value="">64 Go</option>
+              <option value="">96 Go</option>
+            </select>
+            <br />
+            <label htmlFor="stockage">Stockage:</label> &nbsp;
+            <input
+              id="stockage"
+              placeholder="stockage"
+              type="text"
+              name="stockage"
+              onChange={(e) => setData({ ...data, stockage: e.target.value })}
+            ></input>
+            <br />
+            <label htmlFor="indiceAntutu">Indice Antutu:</label> &nbsp;
+            <input
+              id="indiceAntutu"
+              placeholder="Indice_Antutu"
+              type="text"
+              name="indiceAntutu"
+              onChange={(e) =>
+                setData({ ...data, indiceAntutu: e.target.value })
+              }
+            ></input>
+            <br />
+            <label htmlFor="ponderation">Pondération:</label> &nbsp;
+            <select
+              id="ponderation"
+              type="text"
+              name="ponderation"
+              onChange={(e) =>
+                setData({ ...data, ponderation: e.target.value })
+              }
+            >
+              <option defaultValue="">Selectionnez une ponderation</option>
+              <option value="">-100%</option>
+              <option value="">-50%</option>
+              <option value="">-10%</option>
+              <option value="">-5%</option>
+              <option value="">0%</option>
+              <option value="">5%</option>
+              <option value="">10%</option>
+            </select>
+            <br />
+            <button type="submit">Valider</button>
+          </form>
+        </div>
+      </div>
+>>>>>>> 5a000fc (css form & button)
     </div>
   );
 }
