@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./home.css";
-import logo from "/Logo-emmaus-connect.svg";
+import logo from "/Logo-emmaus-connect.svg.png";
 
 export default function Login() {
   const [username, setUsername] = useState("");

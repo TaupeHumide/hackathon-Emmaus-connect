@@ -1,10 +1,19 @@
-export default function Estimate() {
+import "./Estimate.css";
+
+function Estimate() {
   return (
-    <div>
-      <h1>Estimation</h1>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
+    <div className="estimate_main_div">
+      <h1 className="estimate_title">Estimation</h1>
+      <button className="estimate_button">
+        <img src="../../public/desktop_icon.jpg" alt="" />
+      </button>
+      <button className="estimate_button">
+        <img src="../../public/tablet_icon.jpg" alt="" />
+      </button>
+      <button className="estimate_button">
+        <img src="../../public/phone_icon.jpg" alt="" />
+      </button>
     </div>
   );
 }
+export default Estimate;
