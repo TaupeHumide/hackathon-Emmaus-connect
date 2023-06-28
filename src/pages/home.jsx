@@ -1,16 +1,23 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
 import logo from "../../public/Logo-emmaus-connect.svg";
 
 export default function Login() {
   const [username, setUsername] = useState("");
-  const [passWord, setPassWord] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate("/");
+  };
 
   return (
     <div className='container'>
       <div className='screen'>
         <div className='screen-content'>
-          <form className='login'>
+          <form className='login' onSubmit={handleSubmit}>
             <img className='logo' src={logo} alt='logo emmaus' />
             <div className='login-field'>
               <i className='login-icon fas fa-user' />
@@ -27,12 +34,12 @@ export default function Login() {
               <input
                 type='password'
                 className='login-input'
-                value={passWord}
+                value={password}
                 placeholder='Mot de passe'
-                onChange={(e) => setPassWord(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button type='button' className='button login-submit'>
+            <button type='submit' className='button login-submit'>
               <span className='button-text'>Se connecter</span>
               <i className='button-icon fas fa-chevron-right' />
             </button>
