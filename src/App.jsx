@@ -1,13 +1,15 @@
 import "./App.css";
 import Estimate from "./components/Estimate";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/home";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/estimate" element={<Estimate />} />
       </Routes>
     </Router>
