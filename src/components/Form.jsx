@@ -15,6 +15,18 @@ export default function Form() {
     "64 Go": 264,
     "96 Go": 310,
   };
+  const storagePoints = {
+    "16 Go": 31,
+    "32 Go": 45,
+    "64 Go": 66,
+    "128 Go": 94,
+    "256 Go": 129,
+    "512 Go": 171,
+    "1 To": 220,
+    "2 To": 276,
+    "4 To": 339,
+    "8 To": 409,
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -126,7 +138,7 @@ export default function Form() {
           id="stockage"
           placeholder="stockage"
           type="text"
-          name="stockage "
+          name="stockage"
           onChange={(e) => setData({ ...data, stockage: e.target.value })}
         ></input>
         <br />
