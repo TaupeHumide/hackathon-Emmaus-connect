@@ -1,0 +1,35 @@
+.estimate_main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6vh;
+  margin-top: 10vh;
+}
+
+.estimate_button {
+  border: none;
+  width: 20vw;
+  height: 20vh;
+  border-radius: 8px;
+  transition: 0.2s all ease-in-out;
+  background-color: var(--background-color);
+}
+
+.estimate_button img {
+  border-radius: 5px;
+  height: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.estimate_title {
+  color: var(--button-color);
+  border-bottom: 1px solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.estimate_button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
