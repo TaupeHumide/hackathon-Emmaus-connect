@@ -2,4 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 5vh;
+  margin-top: 10vh;
+}
+
+.estimate_button {
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.estimate_button img {
+  border-radius: 10px;
+}
+
+.estimate_title {
+  color: var(--first-color);
+}
+
+.estimate_button:hover {
+  transform: scale(1.1);
 }
