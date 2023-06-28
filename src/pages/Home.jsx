@@ -19,7 +19,7 @@ export default function Home() {
           <form className="login" onSubmit={handleSubmit}>
             <img
               className="logo"
-              src="/Logo-emmaus-connect.svg"
+              src="/Logo_emmaus_connect.png"
               alt="logo emmaus"
             />
             <div className="login-field">

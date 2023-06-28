@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "./Logo-emmaus-connect.svg";
+import logo from "/Logo_emmaus_connect.png";
 import "./Navbar.css";
+
 function Navbar() {
   const links = [
     { path: "/", text: "Accueil" },

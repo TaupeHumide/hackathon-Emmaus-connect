@@ -25,7 +25,8 @@ body {
 }
 
 .logo {
-  max-width: àvh;
+  height: auto;
+  width: 80%;
 }
 
 .screen-content {
@@ -40,7 +41,7 @@ body {
 .login {
   width: 40vh;
   padding: 4vh;
-  padding-top: 20vh;
+  /* padding-top: 20vh; */
 }
 
 .login-field {
