@@ -1,7 +1,11 @@
 import "./App.css";
-
+import Estimate from "./components/Estimate";
 function App() {
-  return <></>;
+  return (
+    <>
+      <Estimate />
+    </>
+  );
 }
 
 export default App;
