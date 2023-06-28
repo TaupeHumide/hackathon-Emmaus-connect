@@ -1,0 +1,37 @@
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.previous-button {
+  margin-left: 1rem;
+}
+
+.next-button {
+  margin-right: 1rem;
+}
+
+.previous-button,
+.next-button {
+  padding: 10px 20px;
+  background-color: #067804;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.previous-button:hover,
+.next-button:hover {
+  background-color: #077117;
+}
+
+.previous-button:focus,
+.next-button:focus {
+  outline: none;
+}
