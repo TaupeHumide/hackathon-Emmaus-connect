@@ -4,22 +4,29 @@ import "./Estimate.css";
 function Estimate() {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/form");
+  const handleClick = (route) => {
+    navigate(route);
   };
   return (
-    <div className='estimate_main_div'>
-      <h1 className='estimate_title' onClick={handleClick}>
-        Estimation
-      </h1>
-      <button className='estimate_button'>
-        <img src='../../public/desktop_icon.jpg' alt='' />
+    <div className="estimate_main_div">
+      <h1 className="estimate_title">Estimation</h1>
+      <button
+        className="estimate_button"
+        onClick={() => handleClick("/laptopForm")}
+      >
+        <img
+          src="../../public/desktop_icon.jpg"
+          alt="icone ordinateur portable"
+        />
       </button>
-      <button className='estimate_button'>
-        <img src='../../public/tablet_icon.jpg' alt='' />
+      <button
+        className="estimate_button"
+        onClick={() => handleClick("/tabletForm")}
+      >
+        <img src="../../public/tablet_icon.jpg" alt="icone tablette" />
       </button>
-      <button className='estimate_button'>
-        <img src='../../public/phone_icon.jpg' alt='' />
+      <button className="estimate_button" onClick={() => handleClick("/form")}>
+        <img src="../../public/phone_icon.jpg" alt="icone smartphone" />
       </button>
     </div>
   );
