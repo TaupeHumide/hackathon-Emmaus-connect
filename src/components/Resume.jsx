@@ -1,6 +1,54 @@
+import { useState } from "react";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import "./Resume.css";
 
-function Resume({ item }) {
+function objectToSearchParams(object) {
+  const searchParams = new URLSearchParams();
+
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      searchParams.append(key, object[key]);
+    }
+  }
+
+  return searchParams.toString();
+}
+
+function Resume() {
+  const [searchParams] = useSearchParams();
+  const [item, setItem] = useState({
+    marque: searchParams.get("marque") ?? "",
+    model: searchParams.get("model") ?? "",
+    ram: searchParams.get("ram") ?? "",
+    ramPoints: searchParams.get("ramPoints") ?? 0,
+    stockage: searchParams.get("stockage") ?? "",
+    indiceAntutu: searchParams.get("indiceAntutu") ?? "",
+    ponderation: searchParams.get("ponderation") ?? "",
+  });
+
+  const RefValA = {
+    0: {
+      range: "0 - 90",
+      value: "1 - HC ",
+    },
+    1: {
+      range: "90 - 165",
+      value: "2 - C ",
+    },
+    2: {
+      range: "165 - 255",
+      value: "3 - B ",
+    },
+    3: {
+      range: "255 - 375",
+      value: "4 - A ",
+    },
+    4: {
+      range: "375 - 1000000",
+      value: "5 - PREMIUM ",
+    },
+  };
+
   return (
     <div className=" resume_content">
       <section className="resume_section1">
@@ -19,14 +67,14 @@ function Resume({ item }) {
             <h4 className="resume_price_h4">Prix estimé : </h4>
           </div>
           <div className="resume_section1_spec_value">
-            <p>Apple</p>
-            <p>Iphone 10</p>
-            <p>64 Go</p>
-            <p>120 000</p>
-            <p>10%</p>
-            <p>4-A</p>
-            <p>255 - 375€</p>
-            <p className="resume_price_p">350€</p>
+            <p>{item.marque ?? "Inconnue"}</p>
+            <p>{item.model ?? "Inconnue"}</p>
+            <p>{item.stockage ?? "Inconnue"}</p>
+            <p>{item.indiceAntutu ?? "Inconnue"}</p>
+            <p>{item.ponderation ?? "Inconnue"}</p>
+            <p>{item.categorie ?? "Inconnue"}</p>
+            <p>{item.totalprice ?? "Inconnue"}</p>
+            <p className="resume_price_p">{item.totalprice ?? "Inconnue"}</p>
           </div>
         </div>
       </section>
