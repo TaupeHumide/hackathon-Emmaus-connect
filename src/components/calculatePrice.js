@@ -1,17 +1,16 @@
-import { RefValA, RefValM, RefValS, Categories } from "./RefTable";
+import { RefValM, RefValS, Categories } from "./RefTable";
 
 const calculate = (item) => {
-  const valA = RefValA[item.antutu]?.value;
   const valM = RefValM[item.ram];
   const valS = RefValS[item.stockage];
-  const total = valA + valM + valS;
+  const total = item.indiceAntutu + valM + valS;
 
-  const pondTotal = total * (1 + item.pond);
-
+  const pondTotal = total * (1 + item.ponderation);
+  console.log(pondTotal);
   const cat = Categories.find(
-    ({ min, max }) => pondTotal >= min && item.pond < max
+    ({ min, max }) => pondTotal >= min && pondTotal < max
   )?.value;
   console.log(cat);
-  return cat;
+  return [pondTotal, cat];
 };
 export default calculate;

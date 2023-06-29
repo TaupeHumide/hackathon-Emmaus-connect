@@ -9,6 +9,8 @@ import Popup from "./components/Popup";
 import Form from "./components/Form";
 import MyEstimates from "./components/MyEstimates";
 import Resume from "./components/Resume";
+import LaptopForm from "./components/LaptopForm";
+import TabletForm from "./components/TabletForm";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +26,8 @@ function App() {
         <Route path="/myEstimates" element={<MyEstimates />} />
         <Route path="/form" element={<Form />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/laptopForm" element={<LaptopForm />} />
+        <Route path="/tabletForm" element={<TabletForm />} />
       </Routes>
     </Router>
   );
