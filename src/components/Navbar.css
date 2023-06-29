@@ -1,9 +1,7 @@
 .navbar_nav {
   display: flex;
-}
-
-.navbar {
-  margin-top: 2vh;
+  justify-content: space-between;
+  max-width: 100vw;
 }
 
 .overlay_menu_mobile {
@@ -20,15 +18,108 @@
   display: block;
 }
 
+.display_none {
+  display: none;
+}
+
 /*////////////////////////////////////////////////
-////////////////      Link       /////////////////
+////////////////      Menu burger    /////////////
 ////////////////////////////////////////////////*/
+
+.navbar_burger {
+  margin: -2% 0 0 2%;
+  width: 7vw;
+  max-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbar_burger:hover {
+  transform: scale(1.1);
+}
+
+.navbar_burger svg {
+  stroke: var(--button-color);
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+/*//////////// Menu burger close ///////////////*/
+
+.navbar_burger_close {
+  display: block;
+  max-width: 60px;
+}
+
+.navbar_burger_close:hover {
+  cursor: pointer;
+}
+
+.navbar_burger_close svg {
+  max-width: 40px;
+  stroke: white;
+  width: 15%;
+  height: auto;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  stroke-width: 2;
+  transition: transform 500ms ease-in-out;
+}
+
+.navbar_burger_close svg:hover {
+  transform: scale(1.2) rotate(360deg);
+}
+
+/*////////////////////////////////////////////////
+////////////////      Logo Emmaus      ///////////
+////////////////////////////////////////////////*/
+
+.logoEmmaus {
+  height: 17vh;
+  /* margin: 1% 0 0 1%; */
+}
+
+/*////////////////////////////////////////////////
+////////////////  Liens de navigation  ///////////
+////////////////////////////////////////////////*/
+
+.navbar {
+  order: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  min-width: 150px;
+  height: 100vh;
+  background-color: var(--button-color);
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 2;
+  margin-top: 0;
+}
+.navbar.open {
+  display: flex;
+  animation: transformMenu 350ms ease-in-out forwards;
+}
+@keyframes transformMenu {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: initial;
+  }
+}
 
 .navbar_link {
   text-decoration: none;
   color: var(--button-color);
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.3rem;
   padding: 0 10px;
   position: relative;
 }
@@ -51,51 +142,18 @@
   display: flex;
   margin: 5vh 0;
   gap: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
+
 .links div {
   display: flex;
   gap: 20px;
 }
 
-/*////////////////////////////////////////////////
-////////////////      Menu burger    /////////////
-////////////////////////////////////////////////*/
-
-.navbar_burger {
-  display: none;
-  margin: 0;
-  width: 7vw;
-  max-width: 60px;
-}
-
-.navbar_burger:hover {
-  transform: scale(1.1);
-}
-
-.navbar_burger svg {
-  stroke: var(--button-color);
-  width: 100%;
-  height: auto;
-}
-.navbar_burger_close {
-  display: none;
-}
-
-.navbar_burger_close svg {
-  max-width: 40px;
-}
-
-.navbar_burger_close:hover {
-  cursor: pointer;
-}
-
-/*////////////////////////////////////////////////
-////////////////      Logo Emmaus      ///////////
-////////////////////////////////////////////////*/
-
-.logoEmmaus {
-  height: 17vh;
-  /* margin: 1% 0 0 1%; */
+.links div a {
+  color: white;
 }
 
 /*////////////////////////////////////////////////
@@ -105,7 +163,8 @@
 .logOut_button {
   border: none;
   background-color: transparent;
-  height: 4vh;
+  height: 5vh;
+  margin: -100% 0 0 0;
 }
 
 .logOut_button img {
@@ -118,166 +177,20 @@
   transform: scale(1.2) rotate(360deg);
 }
 
-.links_connexion {
-  display: flex;
-  gap: 20px;
-  margin: 0 2% 0 0;
-}
 .connexion {
   color: var(--button-color);
   text-decoration: none;
   font-weight: 500;
 }
 
+.links_connexion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7vw;
+  margin-right: 0;
+}
+
 /*////////////////////////////////////////////////
 ////////////////      Media Query      ///////////
 ////////////////////////////////////////////////*/
-
-/* .inscrire {
-  text-decoration: none;
-}
-.inscrire p {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  background-color: var(--button-color);
-  padding: 0 10px;
-}
-.inscrire p:hover {
-  background-color: white;
-  color: var(--button-color);
-} */
-
-.navbar_registration_icon {
-  display: none;
-}
-.navbar_login_icon {
-  display: none;
-}
-/*////////////////////////////////////////////////
-////////////////      Media Query      ///////////
-////////////////////////////////////////////////*/
-@media screen and (max-width: 1920px) {
-  .navbar_burger {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .navbar_burger svg {
-    cursor: pointer;
-    margin-left: 5%;
-  }
-  .navbar_nav {
-    display: flex;
-    justify-content: space-between;
-    max-width: 100vw;
-  }
-  .navbar {
-    order: -1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 25%;
-    min-width: 150px;
-    height: 100vh;
-    background-color: var(--button-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-    z-index: 2;
-    margin-top: 0;
-  }
-  .navbar.open {
-    display: flex;
-    animation: transformMenu 350ms ease-in-out forwards;
-  }
-  @keyframes transformMenu {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: initial;
-    }
-  }
-  .links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .links div a {
-    color: white;
-  }
-  .links_connexion {
-    width: 7vw;
-    margin-right: 0;
-  }
-  .navbar_burger_close {
-    display: block;
-    max-width: 60px;
-  }
-  .navbar_burger_close svg {
-    stroke: white;
-    width: 15%;
-    height: auto;
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    stroke-width: 2;
-    transition: transform 500ms ease-in-out;
-  }
-  .navbar_burger_close svg:hover {
-    transform: scale(1.2) rotate(360deg);
-  }
-
-  .connexion p {
-    display: none;
-  }
-  .inscrire p {
-    display: none;
-  }
-  .links_connexion {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .navbar_registration_icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 5%;
-    right: 0;
-  }
-  .navbar_login_icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 5%;
-  }
-  .logoEmmaus {
-    margin: 2vh 0 0 0;
-  }
-  .navbar_login_icon svg {
-    stroke: var(--button-color);
-    width: 5%;
-    height: auto;
-    position: absolute;
-    right: 12vw;
-    transition: transform 500ms ease-in-out;
-  }
-  .navbar_registration_icon svg {
-    stroke: var(--button-color);
-    width: 5%;
-    height: auto;
-    position: absolute;
-    right: 4vw;
-    transition: transform 500ms ease-in-out;
-  }
-  .navbar_registration_icon svg:hover {
-    transform: scale(1.2) rotate(360deg);
-  }
-  .navbar_login_icon svg:hover {
-    transform: scale(1.2) rotate(360deg);
-  }
-}
