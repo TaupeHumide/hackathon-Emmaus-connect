@@ -1,8 +1,7 @@
 import "./App.css";
 import Estimate from "./components/Estimate";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/home";
-import Form from "./components/Form";
+import Login from "./pages/Home";
 
 function App() {
   return (
