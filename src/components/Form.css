@@ -11,14 +11,18 @@
   justify-content: flex-end;
 }
 
-.container {
+.phone-container,
+.tablet-container,
+.laptop-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.form-container {
+.phone-form-container,
+.tablet-form-container,
+.laptop-form-container {
   width: 80%;
   max-width: 600px;
   margin: 0 auto;
@@ -29,7 +33,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.input {
+.phone-form-input,
+.laptop-form-input,
+.tablet-form-input {
   margin: 20px auto;
   display: flex;
   flex-direction: column;
@@ -50,7 +56,6 @@ select {
 
 button[type="submit"] {
   padding: 10px 20px;
-  background-color: var(--yellow-connect);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -63,24 +68,17 @@ select {
 input#model {
   max-width: 70%;
 }
-.input > * {
+.phone-form-input > *,
+.laptop-form-input > *,
+.tablet-form-input > * {
   margin-bottom: 10px;
 }
-@media screen and (max-width: 600px) {
-  button.previous-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 3px;
-    content: "<";
-  }
-
-  button.next-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 3px;
-    border-radius: 10px;
-  }
+.form-submit-button {
+  background-color: var(--yellow-connect);
+  border-radius: 4px;
+}
+div.phone-form-container,
+div.tablet-form-container,
+div.laptop-form-container {
+  margin-top: -60px;
 }

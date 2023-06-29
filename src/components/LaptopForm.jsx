@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import "./Form.css";
-import calculate from "./calculatePrice";
 
 function objectToSearchParams(object) {
   const searchParams = new URLSearchParams();
@@ -14,8 +13,7 @@ function objectToSearchParams(object) {
 
   return searchParams.toString();
 }
-
-export default function Form() {
+export default function LaptopForm() {
   const ramPoints = {
     "1 Go": 30,
     "2 Go": 40,
@@ -72,23 +70,27 @@ export default function Form() {
     e.preventDefault();
 
     // on recup tte les infos du formulaire
-    const { marque, model, ram, stockage, indiceAntutu, ponderation } =
-      e.target.elements;
+    const {
+      marque,
+      model,
+      ram,
+      ramPoints,
+      stockage,
+      indiceAntutu,
+      ponderation,
+      storagePoints,
+    } = e.target.elements;
 
-    const values = {
+    const searchParamsString = objectToSearchParams({
       marque: marque?.value,
       model: model?.value,
-      ram: parseInt(ram?.value),
-      stockage: parseInt(stockage?.value),
-      indiceAntutu: parseInt(indiceAntutu?.value),
+      ram: ram?.value,
+      ramPoints: ramPoints?.value,
+      stockage: stockage?.value,
+      indiceAntutu: indiceAntutu?.value,
       ponderation: ponderation?.value,
-    };
-    const estimatedPrice = calculate(values);
-    values["categorie"] = estimatedPrice[1];
-    values["pondTotal"] = estimatedPrice[0];
-    const searchParamsString = objectToSearchParams(values);
-
-    // on navigate sur la page estimations
+      storagePoints: storagePoints?.value,
+    });
     navigate("/recap?" + searchParamsString);
   };
 
@@ -105,12 +107,11 @@ export default function Form() {
     showImeiNum: false,
     storagePoints: parseInt(storagePoints ?? "0"),
   });
-
   return (
     <div>
-      <div className="phone-container">
-        <div className="phone-form-container">
-          <form className="phone-form-input" onSubmit={handleSubmit}>
+      <div className="laptop-container">
+        <div className="laptop-form-container">
+          <form className="laptop-form-input" onSubmit={handleSubmit}>
             <br />
             <label htmlFor="marque">Marque:</label>
             &nbsp;
@@ -123,12 +124,12 @@ export default function Form() {
             >
               <option defaultValue="">Selectionnez la marque</option>
               <option value="Apple">Apple</option>
-              <option value="Samsung">Samsung</option>
-              <option value="Huawei">Huawei</option>
-              <option value="Xiaomi">Xiaomi</option>
-              <option value="OnePlus">OnePlus</option>
-              <option value="Google">Google</option>
-              <option value="Vivo">Vivo</option>
+              <option value="Dell">Dell</option>
+              <option value="HP">HP</option>
+              <option value="Asus">Asus</option>
+              <option value="Microsoft">Microsoft</option>
+              <option value="Lenovo">Lenovo</option>
+              <option value="Acer">Acer</option>
             </select>
             <br />
             <label htmlFor="model">Modèle:</label> &nbsp;
@@ -142,25 +143,26 @@ export default function Form() {
               onChange={(e) => setData({ ...data, model: e.target.value })}
             />
             <datalist id="modelOptions">
-              <option value="iPhone 11" />
-              <option value="iPhone SE (2020)" />
-              <option value="iPhone 12 Pro Max" />
-              <option value="Xiaomi Redmi Note 9 Pro" />
-              <option value="OnePlus 8 Pro" />
-              <option value="Google Pixel 5" />
-              <option value="Huawei P40 Pro" />
-              <option value="Samsung Galaxy Note 20 Ultra" />
-              <option value="Xiaomi Redmi 9" />
-              <option value="OnePlus Nord 2" />
-              <option value="Vivo X60 Pro" />
-              <option value="Samsung Galaxy A52" />
-              <option value="Xiaomi Mi 11" />
-              <option value="Huawei Mate 40 Pro" />
-              <option value="Google Pixel 4a" />
-              <option value="Samsung Galaxy S20 FE" />
-              <option value="OnePlus 9 Pro" />
-              <option value="Xiaomi Poco X3 Pro" />
-              <option value="Vivo X50 Pro" />
+              <option value="MacBook Pro" />
+              <option value="XPS 13" />
+              <option value="Envy x360" />
+              <option value="ThinkPad X1 Carbon" />
+              <option value="ROG Zephyus G14" />
+              <option value="Surface Laptop 4" />
+              <option value="Swift 3" />
+              <option value="MacBook Air" />
+              <option value="Inspiron 15" />
+              <option value="Spectre x360" />
+              <option value="ideaPad 5" />
+              <option value="VivoBook 14" />
+              <option value="Predator Helios 300" />
+              <option value="Surface Book 3" />
+              <option value="MacBook Pro M1" />
+              <option value="G3 15" />
+              <option value="Pavilion 15" />
+              <option value="ThinkPad X1 Yoga" />
+              <option value="TUF Gaming A15" />
+              <option value="Surface Laptop Go" />
             </datalist>
             <br />
             <select
@@ -179,17 +181,17 @@ export default function Form() {
               }}
             >
               <option defaultValue="">Sélectionnez la valeur de la RAM</option>
-              <option value="1">1 Go</option>
-              <option value="2">2 Go</option>
-              <option value="3">3 Go</option>
-              <option value="4">4 Go</option>
-              <option value="6">6 Go</option>
-              <option value="8">8 Go</option>
-              <option value="12">12 Go</option>
-              <option value="16">16 Go</option>
-              <option value="32">32 Go</option>
-              <option value="64">64 Go</option>
-              <option value="96">96 Go</option>
+              <option value="1 Go">1 Go</option>
+              <option value="2 Go">2 Go</option>
+              <option value="3 Go">3 Go</option>
+              <option value="4 Go">4 Go</option>
+              <option value="6 Go">6 Go</option>
+              <option value="8 Go">8 Go</option>
+              <option value="12 Go">12 Go</option>
+              <option value="16 Go">16 Go</option>
+              <option value="32 Go">32 Go</option>
+              <option value="64 Go">64 Go</option>
+              <option value="96 Go">96 Go</option>
             </select>
             <br />
             <label htmlFor="stockage">Stockage:</label> &nbsp;
@@ -212,16 +214,16 @@ export default function Form() {
               <option defaultValue="">
                 Sélectionnez la mémoire de stockage
               </option>
-              <option value="16">16 Go</option>
-              <option value="32">32 Go</option>
-              <option value="64">64 Go</option>
-              <option value="128">128 Go</option>
-              <option value="256">256 Go</option>
-              <option value="512">512 Go</option>
-              <option value="1000">1 To</option>
-              <option value="2000">2 To</option>
-              <option value="4000">4 To</option>
-              <option value="8000">8 To</option>
+              <option value="16 Go">16 Go</option>
+              <option value="32 Go">32 Go</option>
+              <option value="64 Go">64 Go</option>
+              <option value="128 Go">128 Go</option>
+              <option value="256 Go">256 Go</option>
+              <option value="512 Go">512 Go</option>
+              <option value="1 To">1 To</option>
+              <option value="2 To">2 To</option>
+              <option value="4 To">4 To</option>
+              <option value="8 To">8 To</option>
             </select>
             <br />
             <label htmlFor="indiceAntutu">Indice Antutu:</label> &nbsp;
@@ -241,25 +243,25 @@ export default function Form() {
               }}
             >
               <option defaultValue="">Sélectionnez un indice Antutu</option>
-              <option value="40">0-50 000</option>
-              <option value="44">50 000-100 000</option>
-              <option value="49">100 000-150 000</option>
-              <option value="55">150 000-200 000</option>
-              <option value="62">250 000-300 000</option>
-              <option value="70">300 000-350 000</option>
-              <option value="79">350 000-400 000</option>
-              <option value="89">400 000-450 000</option>
-              <option value="100">450 000-500 000</option>
-              <option value="112">500 000-550 000</option>
-              <option value="125">550 000-600 000</option>
-              <option value="139">600 000-650 000</option>
-              <option value="154">650 000-700 000</option>
-              <option value="170">700 000-750 000</option>
-              <option value="187">750 000-800 000</option>
-              <option value="205">800 000-850 000</option>
-              <option value="224">850 000-900 000</option>
-              <option value="244">900 000-950 000</option>
-              <option value="287">950 000</option>
+              <option value="0-50 000">0-50 000</option>
+              <option value="50 000-100 000">50 000-100 000</option>
+              <option value="100 000-150 000">100 000-150 000</option>
+              <option value="150 000-200 000">150 000-200 000</option>
+              <option value="250 000-300 000">250 000-300 000</option>
+              <option value="300 000-350 000">300 000-350 000</option>
+              <option value="350 000-400 000">350 000-400 000</option>
+              <option value="400 000-450 000">400 000-450 000</option>
+              <option value="450 000-500 000">450 000-500 000</option>
+              <option value="500 000-550 000">500 000-550 000</option>
+              <option value="550 000-600 000">550 000-600 000</option>
+              <option value="600 000-650 000">600 000-650 000</option>
+              <option value="650 000-700 000">650 000-700 000</option>
+              <option value="00 000-750 000">700 000-750 000</option>
+              <option value="750 000-800 000">750 000-800 000</option>
+              <option value="800 000-850 000">800 000-850 000</option>
+              <option value="850 000-900 000">850 000-900 000</option>
+              <option value="900 000-950 000">900 000-950 000</option>
+              <option value="950 000<">950 000</option>
             </select>
             <br />
             <label htmlFor="ponderation">Pondération:</label> &nbsp;
