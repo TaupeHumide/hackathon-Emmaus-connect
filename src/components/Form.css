@@ -1,3 +1,17 @@
+body {
+  background-image: url("https://img.freepik.com/photos-premium/fond-texture-mur-ciment-bleu-blanc_7190-199.jpg?w=1380");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Titre-Form {
+  margin-top: 2rem;
+  margin-bottom: -3rem;
+  text-align: center;
+  color: #6d919f;
+}
+
 .button-previous {
   display: flex;
   flex-direction: row;
@@ -22,10 +36,13 @@
   width: 80%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
-  border: 2px solid #035d03;
+  margin-top: -5%;
+  padding: 7rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border: 2px solid #1a4d67;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #3b7681;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -39,13 +56,17 @@
 label {
   font-weight: bold;
   margin-bottom: 10px;
+  text-shadow: -1px -1px 0 #130c06, 1px -1px 0 #1e1205, -1px 1px 0 #5a442d,
+    1px 1px 0 #221405;
+  color: #fff;
 }
 
 input[type="text"],
 select {
-  width: 100%;
+  width: 50%;
   padding: 5px;
-  margin-bottom: 10px;
+
+  margin-bottom: 1svh;
 }
 
 button[type="submit"] {
@@ -58,4 +79,43 @@ button[type="submit"] {
 
 .input > * {
   margin-bottom: 10px;
+}
+
+.input input[type="text"],
+.input select {
+  padding: 10px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.input input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.input label {
+  margin-right: 10px;
+  margin-bottom: 2px;
+}
+
+.input button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #63b3de;
+  color: #fff;
+  border-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 1em;
+  overflow: hidden;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+
+.input button[type="submit"]:hover {
+  background-color: #0056b3;
 }

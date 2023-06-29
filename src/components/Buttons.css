@@ -9,26 +9,38 @@
   margin: 0 auto;
 }
 
-.previous-button {
-  margin-left: 1rem;
+.fleche-gauche {
+  margin-left: 2rem;
+  width: 20px;
+  height: 20px;
 }
 
-.next-button {
-  margin-right: 1rem;
+.fleche-gauche:hover {
+  transform: scale(1.5);
+}
+
+.fleche-droite {
+  margin-right: 2rem;
+}
+
+.fleche-droite:hover {
+  transform: scale(1.5);
 }
 
 .previous-button,
 .next-button {
   padding: 10px 20px;
-  background-color: #067804;
+  background-color: #67afca;
   color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .previous-button:hover,
 .next-button:hover {
-  background-color: #077117;
+  background-color: #8cb2d0;
+  transform: scale(1.1);
 }
 
 .previous-button:focus,
