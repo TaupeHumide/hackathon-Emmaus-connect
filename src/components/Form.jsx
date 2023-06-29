@@ -89,7 +89,7 @@ export default function Form() {
     const searchParamsString = objectToSearchParams(values);
 
     // on navigate sur la page estimations
-    navigate("/recap?" + searchParamsString);
+    navigate("/resume?" + searchParamsString);
   };
 
   const [data, setData] = useState({
