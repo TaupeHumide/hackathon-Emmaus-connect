@@ -30,17 +30,19 @@
 .previous-button,
 .next-button {
   padding: 10px 20px;
-  background-color: #67afca;
+
+  background-color: var(--button-color);
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .previous-button:hover,
 .next-button:hover {
-  background-color: #8cb2d0;
-  transform: scale(1.1);
+
+  background-color: var(--hover-button-color);
 }
 
 .previous-button:focus,

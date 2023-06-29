@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   gap: 6vh;
-  margin-top: 10vh;
+  margin: 2vh 0 8vh 0;
 }
 
 .estimate_button {
@@ -25,9 +25,6 @@
 .estimate_title {
   color: var(--button-color);
   border-bottom: 1px solid;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
 }
 
 .estimate_button:hover {
