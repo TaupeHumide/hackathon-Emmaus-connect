@@ -3,12 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "/Logo_emmaus_connect2.png";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ setIsOpen }) {
   const links = [
     { path: "/", text: "Nouvelle estimation" },
-    { path: "/home", text: "Mes estimations" },
-    { path: "/espace", text: "Stock" },
-    { path: "/contact", text: "FAQ" },
+    { path: "/myEstimate", text: "Mes estimations" },
+    { path: "/stock", text: "Stock" },
+    { path: "/faq", text: "FAQ" },
   ];
 
   const location = useLocation();
@@ -17,6 +17,10 @@ function Navbar() {
   const [openMenu, setOpenMenu] = useState("false");
   const openMenuMobile = () => {
     setOpenMenu((value) => !value);
+  };
+
+  const confirmLogout = () => {
+    setIsOpen(true);
   };
 
   return (
@@ -102,7 +106,7 @@ function Navbar() {
         </div>
         <div className="links_connexion">
           <Link to="/" className="connexion">
-            <button className="logOut_button">
+            <button className="logOut_button" onClick={confirmLogout}>
               <img src="/logOut_icon.png" alt="logo to logout" />
             </button>
           </Link>

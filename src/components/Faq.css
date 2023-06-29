@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Merriweather+Sans&display=swap");
+
+.faq_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  margin: 2% 0;
+}
+
+/*////////////////////////////////////////////////
+////////////////      Section 1    /////////////
+////////////////////////////////////////////////*/
+
+.faq_img {
+  display: flex;
+  align-items: center;
+  background-color: var(--button-color);
+  height: 40vh;
+  width: 70%;
+  border-radius: 10px;
+}
+
+.faq_img img {
+  height: 40vh;
+  width: auto;
+}
+
+.faq_img h1 {
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 2.7rem;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+/*////////////////////////////////////////////////
+/////////////    Section 2 search_bar   //////////
+////////////////////////////////////////////////*/
+
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.input-search {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  background-color: var(--button-color);
+  padding-right: 40px;
+  color: white;
+}
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color: #ffffff;
+  background-color: transparent;
+  pointer-events: painted;
+}
+.btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 0px;
+  background-color: var(--button-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: var(--button-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+/*////////////////////////////////////////////////
+/////////////    Section 3 faq   //////////
+////////////////////////////////////////////////*/
+
+.faq_content_div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  color: var(--hover-button-color);
+}
+
+.faq_content_div h2 {
+  align-self: center;
+  margin-bottom: 4%;
+}
