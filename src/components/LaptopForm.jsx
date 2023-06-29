@@ -107,6 +107,7 @@ export default function LaptopForm() {
     <div>
       <div className="laptop-container">
         <div className="laptop-form-container">
+          <img src="/desktop_icon.jpg" alt="icone ordinateur portable" />
           <form className="laptop-form-input" onSubmit={handleSubmit}>
             <br />
             <label htmlFor="marque">Marque:</label>
@@ -161,6 +162,7 @@ export default function LaptopForm() {
               <option value="Surface Laptop Go" />
             </datalist>
             <br />
+            <label htmlFor="ram">RAM:</label> &nbsp;
             <select
               id="ram"
               type="text"

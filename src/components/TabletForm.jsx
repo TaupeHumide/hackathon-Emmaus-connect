@@ -107,6 +107,7 @@ export default function Form() {
     <div>
       <div className="tablet-container">
         <div className="tablet-form-container">
+          <img src="/tablet_icon.jpg" alt="icone tablette" />
           <form className="tablet-form-input" onSubmit={handleSubmit}>
             <br />
             <label htmlFor="marque">Marque:</label>
@@ -160,6 +161,7 @@ export default function Form() {
               <option value="Galaxy Tab S5e" />
             </datalist>
             <br />
+            <label htmlFor="ram">RAM:</label> &nbsp;
             <select
               id="ram"
               type="text"
