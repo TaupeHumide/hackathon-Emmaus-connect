@@ -1,0 +1,86 @@
+.button-previous {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.button-next {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid var(--yellow-connect);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: var(--yellow-connect);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+select {
+  border-radius: 5px;
+  max-width: 70%;
+  text-align: center;
+}
+input#model {
+  max-width: 70%;
+}
+.input > * {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 600px) {
+  button.previous-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 3px;
+    content: "<";
+  }
+
+  button.next-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 3px;
+    border-radius: 10px;
+  }
+}

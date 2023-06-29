@@ -9,7 +9,9 @@ function Estimate() {
   };
   return (
     <div className='estimate_main_div'>
-      <h1 className='estimate_title'>Nouvelle Estimation : </h1>
+      <h1 className='estimate_title' onClick={handleClick}>
+        Estimation
+      </h1>
       <button className='estimate_button'>
         <img src='../../public/desktop_icon.jpg' alt='' />
       </button>
