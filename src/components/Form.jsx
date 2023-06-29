@@ -112,28 +112,6 @@ export default function Form() {
     storagePoints: parseInt(storagePoints ?? "0"),
   });
 
-  // no need, use data.marque directly
-  /* const userInput = {
-    imei: data.imei,
-    imeiNum: data.imeiNum,
-    marque: data.marque,
-    model: data.model,
-    ram: data.ram,
-    ramPoints: data.ramPoints,
-    totalPoints: data.totalPoints,
-    stockage: data.stockage,
-    indiceAntutu: data.indiceAntutu,
-    antutuPoints: data.antutuPoints,
-    ponderation: data.ponderation,
-    showImeiNum: data.showImeiNum,
-    storagePoints: data.storagePoints,
-  };
-  const itemData = {
-    ramPoints: data.ramPoints,
-    antutuPoints: data.antutuPoints,
-    storagePoints: data.storagePoints,
-  };
-*/
   return (
     <div>
       <Buttons className='Boutons' />
