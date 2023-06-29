@@ -23,7 +23,7 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  border: 2px solid #035d03;
+  border: 2px solid var(--yellow-connect);
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -50,12 +50,37 @@ select {
 
 button[type="submit"] {
   padding: 10px 20px;
-  background-color: #17850d;
+  background-color: var(--yellow-connect);
   color: #fff;
   border: none;
   cursor: pointer;
 }
-
+select {
+  border-radius: 5px;
+  max-width: 70%;
+  text-align: center;
+}
+input#model {
+  max-width: 70%;
+}
 .input > * {
   margin-bottom: 10px;
+}
+@media screen and (max-width: 600px) {
+  button.previous-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 3px;
+    content: "<";
+  }
+
+  button.next-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 3px;
+    border-radius: 10px;
+  }
 }

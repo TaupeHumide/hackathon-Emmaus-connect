@@ -20,15 +20,16 @@
 .previous-button,
 .next-button {
   padding: 10px 20px;
-  background-color: #067804;
+  background-color: var(--button-color);
   color: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .previous-button:hover,
 .next-button:hover {
-  background-color: #077117;
+  background-color: var(--hover-button-color);
 }
 
 .previous-button:focus,

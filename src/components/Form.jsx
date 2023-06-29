@@ -1,6 +1,20 @@
 import { useState } from "react";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Buttons from "./Buttons";
 import "./Form.css";
+
+function objectToSearchParams(object) {
+  const searchParams = new URLSearchParams();
+
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      searchParams.append(key, object[key]);
+    }
+  }
+
+  return searchParams.toString();
+}
+
 export default function Form() {
   const ramPoints = {
     "1 Go": 30,
@@ -27,24 +41,99 @@ export default function Form() {
     "4 To": 339,
     "8 To": 409,
   };
+  const antutuPoints = {
+    "0-50 000": 40,
+    "50 000-100 000": 44,
+    "100 000-150 000": 49,
+    "150 000-200 000": 55,
+    "200 000-250 000": 62,
+    "250 000-300 000": 70,
+    "300 000-350 000": 79,
+    "350 000-400 000": 89,
+    "400 000-450 000": 100,
+    "450 000-500 000": 112,
+    "500 000-550 000": 125,
+    "550 000-600 000": 139,
+    "600 000-650 000": 154,
+    "650 000-700 000": 170,
+    "700 000-750 000": 187,
+    "750 000-800 000": 205,
+    "800 000-850 000": 224,
+    "850 000-900 000": 244,
+    "900 000-950 000": 265,
+    "950 000": 287,
+  };
+
+  const [searchParams] = useSearchParams();
+
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // on recup tte les infos du formulaire
+    const {
+      marque,
+      model,
+      ram,
+      ramPoints,
+      stockage,
+      indiceAntutu,
+      ponderation,
+      storagePoints,
+    } = e.target.elements;
+
+    const searchParamsString = objectToSearchParams({
+      marque: marque?.value,
+      model: model?.value,
+      ram: ram?.value,
+      ramPoints: ramPoints?.value,
+      stockage: stockage?.value,
+      indiceAntutu: indiceAntutu?.value,
+      ponderation: ponderation?.value,
+      storagePoints: storagePoints?.value,
+    });
+
+    // on navigate sur la page estimations
+    navigate("/recap?" + searchParamsString);
   };
+
   const [data, setData] = useState({
-    imei: "",
-    imeiNum: "",
-    marque: "",
-    model: "",
-    ram: "",
-    ramPoints: 0,
-    totalPoints: 0,
-    stockage: "",
-    indiceAntutu: "",
-    ponderation: "",
+    imei: searchParams.get("imei") ?? "",
+    imeiNum: searchParams.get("imeiNum") ?? "",
+    marque: searchParams.get("marque") ?? "",
+    model: searchParams.get("model") ?? "",
+    ram: searchParams.get("ram") ?? "",
+    ramPoints: searchParams.get("ramPoints") ?? 0,
+    stockage: searchParams.get("stockage") ?? "",
+    indiceAntutu: searchParams.get("indiceAntutu") ?? "",
+    ponderation: searchParams.get("ponderation") ?? "",
     showImeiNum: false,
-    storagePoints: 0,
+    storagePoints: parseInt(storagePoints ?? "0"),
   });
 
+  // no need, use data.marque directly
+  /* const userInput = {
+    imei: data.imei,
+    imeiNum: data.imeiNum,
+    marque: data.marque,
+    model: data.model,
+    ram: data.ram,
+    ramPoints: data.ramPoints,
+    totalPoints: data.totalPoints,
+    stockage: data.stockage,
+    indiceAntutu: data.indiceAntutu,
+    antutuPoints: data.antutuPoints,
+    ponderation: data.ponderation,
+    showImeiNum: data.showImeiNum,
+    storagePoints: data.storagePoints,
+  };
+  const itemData = {
+    ramPoints: data.ramPoints,
+    antutuPoints: data.antutuPoints,
+    storagePoints: data.storagePoints,
+  };
+*/
   return (
     <div>
       <Buttons className='Boutons' />
@@ -52,46 +141,7 @@ export default function Form() {
       <div className='container'>
         <div className='form-container'>
           <form className='input' onSubmit={handleSubmit}>
-            Do you have an imei number ? &nbsp;
-            <input
-              type='radio'
-              id='imei'
-              name='imeiOption'
-              value='Yes'
-              onChange={(e) =>
-                setData({ ...data, imei: e.target.value, showImeiNum: true })
-              }
-            ></input>
-            <label htmlFor='ImeiYes'> Oui</label>
-            <input
-              id='imei'
-              type='radio'
-              value='No'
-              name='imeiOption'
-              onChange={(e) =>
-                setData({ ...data, imei: e.target.value, showImeiNum: false })
-              }
-            ></input>
-            <label htmlFor='ImeiNo'> Non</label>
-            <br />
-            {data.showImeiNum ? (
-              <div>
-                <label htmlFor='imeiNum'>Numero Imei:</label> &nbsp;
-                <input
-                  type='radio'
-                  id='imei'
-                  name='imeiOption'
-                  value='Yes'
-                  onChange={(e) =>
-                    setData({
-                      ...data,
-                      imei: e.target.value,
-                      showImeiNum: true,
-                    })
-                  }
-                ></input>
-              </div>
-            ) : null}
+            <p>Avez-vous un numero d&apos;Imei ?</p> &nbsp;
             <br />
             <label htmlFor='marque'>Marque:</label>
             &nbsp;
@@ -100,9 +150,18 @@ export default function Form() {
               name='marque'
               type='text'
               onChange={(e) => setData({ ...data, marque: e.target.value })}
+              value={data.marque}
             >
+              <option defaultValue=''>Selectionnez la marque</option>
               <option value='Apple'>Apple</option>
-              <option value='Apple'>Android</option>
+              <option value='Samsung'>Samsung</option>
+              <option value='Lenovo'>Lenovo</option>
+              <option value='Huawei'>Huawei</option>
+              <option value='Microsoft'>Microsoft</option>
+              <option value='Amazon'>Amazon</option>
+              <option value='HP'>HP</option>
+              <option value='Asus'>Asus</option>
+              <option value='Acer'>Acer</option>
             </select>
             <br />
             <label htmlFor='model'>Modèle:</label> &nbsp;
@@ -111,13 +170,75 @@ export default function Form() {
               placeholder='Modèle'
               type='text'
               name='model'
+              list='modelOptions'
+              value={data.model}
               onChange={(e) => setData({ ...data, model: e.target.value })}
-            ></input>
+            />
+            <datalist id='modelOptions'>
+              <option value='iPhone 11' />
+              <option value='iPhone SE (2020)' />
+              <option value='iPhone 12 Pro Max' />
+              <option value='Xiaomi Redmi Note 9 Pro' />
+              <option value='OnePlus 8 Pro' />
+              <option value='Google Pixel 5' />
+              <option value='Huawei P40 Pro' />
+              <option value='Samsung Galaxy Note 20 Ultra' />
+              <option value='Xiaomi Redmi 9' />
+              <option value='OnePlus Nord 2' />
+              <option value='Vivo X60 Pro' />
+              <option value='Samsung Galaxy A52' />
+              <option value='Xiaomi Mi 11' />
+              <option value='Huawei Mate 40 Pro' />
+              <option value='Google Pixel 4a' />
+              <option value='Samsung Galaxy S20 FE' />
+              <option value='OnePlus 9 Pro' />
+              <option value='Vivo X50 Pro' />
+              <option value='iPad Pro' />
+              <option value='Galaxy Tab 7' />
+              <option value='Tab P11 Pro' />
+              <option value='MediaPad M5' />
+              <option value='Surface Pro 7' />
+              <option value='Galaxy Tab A7' />
+              <option value='iPad Air' />
+              <option value='Tab M10 FHD Plus' />
+              <option value='Fire HD 10' />
+              <option value='MediaPad T5' />
+              <option value='Galaxy Tab S6 Lite' />
+              <option value='iPad Mini' />
+              <option value='Surface Go 2' />
+              <option value='Galaxy Tab A 8.0' />
+              <option value='Tab M6 FHD' />
+              <option value='Fire HD 8' />
+              <option value='Yoga Smart Tab' />
+              <option value='MediaPad M6' />
+              <option value='iPad Pro (2021)' />
+              <option value='MacBook Pro' />
+              <option value='XPS 13' />
+              <option value='Envy x360' />
+              <option value='ThinkPad X1 Carbon' />
+              <option value='ROG Zephyus G14' />
+              <option value='Surface Laptop 4' />
+              <option value='Swift 3' />
+              <option value='MacBook Air' />
+              <option value='Inspiron 15' />
+              <option value='Spectre x360' />
+              <option value='ideaPad 5' />
+              <option value='VivoBook 14' />
+              <option value='Predator Helios 300' />
+              <option value='Surface Book 3' />
+              <option value='MacBook Pro M1' />
+              <option value='G3 15' />
+              <option value='Pavilion 15' />
+              <option value='ThinkPad X1 Yoga' />
+              <option value='TUF Gaming A15' />
+              <option value='Surface Laptop Go' />
+            </datalist>
             <br />
             <select
               id='ram'
               type='text'
               name='ram'
+              value={data.ram}
               onChange={(e) => {
                 const selectedRam = e.target.value;
                 const ramPointsValue = ramPoints[selectedRam];
@@ -148,6 +269,7 @@ export default function Form() {
               placeholder='stockage'
               type='text'
               name='stockage'
+              value={data.stockage}
               onChange={(e) => {
                 const selectedStorage = e.target.value;
                 const storagePointsValue = storagePoints[selectedStorage];
@@ -178,30 +300,37 @@ export default function Form() {
               id='indiceAntutu'
               type='text'
               name='indiceAntutu'
-              onChange={(e) =>
-                setData({ ...data, indiceAntutu: e.target.value })
-              }
+              value={data.indiceAntutu}
+              onChange={(e) => {
+                const selectedAntutu = e.target.value;
+                const antutuPointsValue = antutuPoints[selectedAntutu];
+                setData({
+                  ...data,
+                  indiceAntutu: selectedAntutu,
+                  antutuPoints: antutuPointsValue,
+                });
+              }}
             >
               <option defaultValue=''>Sélectionnez un indice Antutu</option>
-              <option value=''>0-50 000</option>
-              <option value=''>50 000-100 000</option>
-              <option value=''>100 000-150 000</option>
-              <option value=''>150 000-200 000</option>
-              <option value=''>250 000-300 000</option>
-              <option value=''>300 000-350 000</option>
-              <option value=''>350 000-400 000</option>
-              <option value=''>400 000-450 000</option>
-              <option value=''>450 000-500 000</option>
-              <option value=''>500 000-550 000</option>
-              <option value=''>550 000-600 000</option>
-              <option value=''>600 000-650 000</option>
-              <option value=''>650 000-700 000</option>
-              <option value=''>700 000-750 000</option>
-              <option value=''>750 000-800 000</option>
-              <option value=''>800 000-850 000</option>
-              <option value=''>850 000-900 000</option>
-              <option value=''>900 000-950 000</option>
-              <option value=''>950 000</option>
+              <option value='0-50 000'>0-50 000</option>
+              <option value='50 000-100 000'>50 000-100 000</option>
+              <option value='100 000-150 000'>100 000-150 000</option>
+              <option value='150 000-200 000'>150 000-200 000</option>
+              <option value='250 000-300 000'>250 000-300 000</option>
+              <option value='300 000-350 000'>300 000-350 000</option>
+              <option value='350 000-400 000'>350 000-400 000</option>
+              <option value='400 000-450 000'>400 000-450 000</option>
+              <option value='450 000-500 000'>450 000-500 000</option>
+              <option value='500 000-550 000'>500 000-550 000</option>
+              <option value='550 000-600 000'>550 000-600 000</option>
+              <option value='600 000-650 000'>600 000-650 000</option>
+              <option value='650 000-700 000'>650 000-700 000</option>
+              <option value='00 000-750 000'>700 000-750 000</option>
+              <option value='750 000-800 000'>750 000-800 000</option>
+              <option value='800 000-850 000'>800 000-850 000</option>
+              <option value='850 000-900 000'>850 000-900 000</option>
+              <option value='900 000-950 000'>900 000-950 000</option>
+              <option value='950 000<'>950 000</option>
             </select>
             <br />
             <label htmlFor='ponderation'>Pondération:</label> &nbsp;
@@ -209,18 +338,19 @@ export default function Form() {
               id='ponderation'
               type='text'
               name='ponderation'
+              value={data.ponderation}
               onChange={(e) =>
                 setData({ ...data, ponderation: e.target.value })
               }
             >
               <option defaultValue=''>Sélectionnez une pondération</option>
-              <option value=''>-100%</option>
-              <option value=''>-50%</option>
-              <option value=''>-10%</option>
-              <option value=''>-5%</option>
-              <option value=''>0%</option>
-              <option value=''>5%</option>
-              <option value=''>10%</option>
+              <option value='-100'>-100 %</option>
+              <option value='-50'>-50 %</option>
+              <option value='-10'>-10 %</option>
+              <option value='-5'>-5 %</option>
+              <option value='0'>0 %</option>
+              <option value='5'>5 %</option>
+              <option value='10'>10 %</option>
             </select>
             <br />
             <button type='submit'>Valider</button>
