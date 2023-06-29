@@ -87,8 +87,6 @@ export default function Form() {
     values["categorie"] = estimatedPrice[1];
     values["pondTotal"] = estimatedPrice[0];
     const searchParamsString = objectToSearchParams(values);
-
-    // on navigate sur la page estimations
     navigate("/recap?" + searchParamsString);
   };
 
