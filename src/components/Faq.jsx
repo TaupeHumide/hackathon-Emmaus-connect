@@ -8,15 +8,12 @@ function Faq() {
         <h1>Des Questions ?</h1>
       </section>
       <section className="faq_searchbar">
-        <div class="search-box">
-          <button class="btn-search">
-            <i class="fas fa-search"></i>
-          </button>
-          <input
-            type="text"
-            class="input-search"
-            placeholder="Type to Search..."
-          />
+        <div class="flexbox">
+          <div class="search">
+            <div>
+              <input type="text" placeholder="Search . . ." required />
+            </div>
+          </div>
         </div>
       </section>
       <section className="faq_content">

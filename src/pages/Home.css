@@ -19,7 +19,7 @@ body {
   background-color: var(--background-color);
 }
 
-.container {
+.login_container {
   margin-top: 9vh;
   display: flex;
   align-items: center;
