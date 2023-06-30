@@ -14,14 +14,13 @@
 ////////////////      Section 1    /////////////
 ////////////////////////////////////////////////*/
 
-/* .faq_img {
+.faq_img {
   display: flex;
   align-items: center;
-  background-color: var(--button-color);
   height: 40vh;
   width: 70%;
   border-radius: 10px;
-} */
+}
 
 .faq_img img {
   height: 40vh;
@@ -33,7 +32,7 @@
   border-bottom: 1px solid;
   font-size: 2.5em;
   margin-left: 15%;
-  margin-top: -8em;
+  margin-top: -15em;
 }
 
 /*////////////////////////////////////////////////
@@ -43,7 +42,7 @@
 .faq_searchbar {
   height: 15vh;
   width: 100%;
-  margin: 2% 0;
+  margin: 2% 0 4vh 0;
   /* background-color: rgb(182, 182, 52); */
 }
 .flexbox {
@@ -109,6 +108,13 @@
 /////////////    Section 3 faq   //////////
 ////////////////////////////////////////////////*/
 
+.faq_section_main_content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
 .faq_content2 {
   width: 100%;
 }
@@ -123,12 +129,6 @@
 .faq_content_div h2 {
   align-self: center;
   margin-bottom: 4%;
-}
-
-.faq_section_main_content {
-  display: flex;
-  flex-direction: column;
-  max-width: 25%;
 }
 
 /* .faq_searchbar {
