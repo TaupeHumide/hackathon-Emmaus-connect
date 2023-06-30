@@ -1,10 +1,10 @@
 import "./MyEstimates.css";
-import iPhone11 from "/iPhone11.jpeg";
-import redmi9 from "/redmiNote9Pro.jpeg";
-import galaxyS7 from "/galaxyTabS7.jpeg";
-import fireHD from "/fireHD8.jpeg";
-import rog from "/rogZephyrusG14.jpeg";
-import mbka from "/macBookAirProM1.jpeg";
+import iPhone11 from "/iPhone11.png";
+import redmi9 from "/redmiNote9Pro.png";
+import galaxyS7 from "/galaxyTabS7.png";
+import fireHD from "/fireHD8.png";
+import rog from "/rogZephyrusG14.png";
+import mbka from "/macBookAirProM1.png";
 
 export default function myEstimates() {
   const phone = [
