@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Popup.css";
 
 function Popup({ setIsOpen }) {
@@ -8,6 +10,16 @@ function Popup({ setIsOpen }) {
 
   const navigate = useNavigate();
   const logOut = () => {
+    toast.success("A bientôt 👋 ", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     navigate("/");
     setIsOpen(false);
   };

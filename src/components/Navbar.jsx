@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "/Logo_emmaus_connect2.png";
 import "./Navbar.css";
 
@@ -13,7 +13,6 @@ function Navbar({ setIsOpen }) {
   ];
 
   const location = useLocation();
-  const navigate = useNavigate();
   const currentUrl = location.pathname;
 
   const [openMenu, setOpenMenu] = useState("false");

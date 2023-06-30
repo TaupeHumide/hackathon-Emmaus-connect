@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Home.css";
 import logo from "/Logo_emmaus_connect.png";
 import home_img from "/home_img.jpg";
@@ -39,6 +41,16 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    toast.success("Content de vous revoir 👋 ", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     navigate("/estimate");
   };
 

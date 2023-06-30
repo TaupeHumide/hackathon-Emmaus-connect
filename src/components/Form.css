@@ -18,7 +18,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 6vh 0;
+  margin-top: 10%;
 }
 
 .phone-form-container,
@@ -26,7 +26,7 @@
 .laptop-form-container {
   width: 80%;
   max-width: 600px;
-  margin: 0 auto;
+  margin-right: -10rem;
   padding: 20px;
   border: 2px solid var(--yellow-connect);
   border-radius: 8px;
@@ -81,5 +81,5 @@ select {
 div.phone-form-container,
 div.tablet-form-container,
 div.laptop-form-container {
-  margin-top: -60px;
+  margin-top: -20px;
 }
