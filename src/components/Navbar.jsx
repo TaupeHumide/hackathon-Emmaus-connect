@@ -60,7 +60,7 @@ function Navbar({ setIsOpen }) {
             />
           </svg>
         </div>
-        <Link to="/">
+        <Link to="/estimate">
           <img className="logoEmmaus" src={logo} alt="logo emmaus connect" />
         </Link>
         <div className={openMenu ? "navbar" : "navbar open"}>
