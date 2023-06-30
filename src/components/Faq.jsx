@@ -12,7 +12,11 @@ function Faq() {
           <div class="flexbox">
             <div class="search">
               <div>
-                <input type="text" placeholder="Search . . ." required />
+                <input
+                  type="text"
+                  placeholder="Posez votre question"
+                  required
+                />
               </div>
             </div>
           </div>
