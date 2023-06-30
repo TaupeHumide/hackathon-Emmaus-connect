@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { Categories } from "./RefTable";
 import "./Resume.css";
 
 function objectToSearchParams(object) {
@@ -24,9 +25,11 @@ function Resume() {
     stockage: searchParams.get("stockage") ?? "",
     indiceAntutu: searchParams.get("indiceAntutu") ?? "",
     ponderation: searchParams.get("ponderation") ?? "",
+    categorie: searchParams.get("categorie") ?? "",
+    pondTotal: searchParams.get("pondTotal") ?? "",
   });
 
-  const RefValA = {
+  const infos = {
     0: {
       range: "0 - 90",
       value: "1 - HC ",
@@ -44,10 +47,18 @@ function Resume() {
       value: "4 - A ",
     },
     4: {
-      range: "375 - 1000000",
+      range: "375 - ",
       value: "5 - PREMIUM ",
     },
   };
+
+  const cat = Categories.find(
+    ({ min, max }) => item.pondTotal >= min && item.pondTotal < max
+  );
+
+  if (cat) {
+    const { min, max, value } = cat;
+  }
 
   return (
     <div className=" resume_content">
@@ -73,8 +84,8 @@ function Resume() {
             <p>{item.indiceAntutu ?? "Inconnue"}</p>
             <p>{item.ponderation ?? "Inconnue"}</p>
             <p>{item.categorie ?? "Inconnue"}</p>
-            <p>{item.totalprice ?? "Inconnue"}</p>
-            <p className="resume_price_p">{item.totalprice ?? "Inconnue"}</p>
+            <p>{`${cat.min}   -   ${cat.max} €` ?? "Inconnue"}</p>
+            <p className="resume_price_p">{item.pondTotal ?? "Inconnue"}</p>
           </div>
         </div>
       </section>

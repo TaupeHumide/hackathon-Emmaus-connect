@@ -42,30 +42,30 @@
   align-items: center;
 }
 
-label {
+.phone-container label {
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-input[type="text"],
+.phone-container input[type="text"],
 select {
   width: 100%;
   padding: 5px;
   margin-bottom: 10px;
 }
 
-button[type="submit"] {
+.phone-container button[type="submit"] {
   padding: 10px 20px;
   color: #fff;
   border: none;
   cursor: pointer;
 }
-select {
+.phone-container select {
   border-radius: 5px;
   max-width: 70%;
   text-align: center;
 }
-input#model {
+.phone-container input#model {
   max-width: 70%;
 }
 .phone-form-input > *,

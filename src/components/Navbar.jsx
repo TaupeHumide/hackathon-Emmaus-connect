@@ -6,7 +6,7 @@ import "./Navbar.css";
 function Navbar({ setIsOpen }) {
   const links = [
     { path: "/Estimate", text: "Nouvelle estimation" },
-    { path: "/myEstimate", text: "Mes estimations" },
+    { path: "/myEstimates", text: "Mes estimations" },
     { path: "/stock", text: "Stock" },
     { path: "/faq", text: "FAQ" },
   ];
