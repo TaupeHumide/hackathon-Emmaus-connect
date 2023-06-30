@@ -110,6 +110,7 @@ export default function Form() {
     <div>
       <div className="phone-container">
         <div className="phone-form-container">
+          <img src="/phone_icon.jpg" alt="icone smartphone" />
           <form className="phone-form-input" onSubmit={handleSubmit}>
             <br />
             <label htmlFor="marque">Marque:</label>
@@ -163,10 +164,12 @@ export default function Form() {
               <option value="Vivo X50 Pro" />
             </datalist>
             <br />
+            <label htmlFor="ram">RAM:</label> &nbsp;
             <select
               id="ram"
               type="text"
               name="ram"
+              placeholder="RAM"
               value={data.ram}
               onChange={(e) => {
                 const selectedRam = e.target.value;

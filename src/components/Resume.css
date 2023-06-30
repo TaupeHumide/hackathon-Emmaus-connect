@@ -87,17 +87,27 @@
   justify-content: space-between;
   gap: 20px;
 }
+
 .resume_section2_button button {
   height: 100%;
   width: 40%;
   border: none;
   border-radius: 15px;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: transform 200ms ease-in-out;
 }
 
 .resume_section2_button button:first-child {
-  background-color: #05d5aa;
+  background-color: var(--yellow-connect);
 }
 
 .resume_section2_button button:nth-child(2) {
-  background-color: rgb(20, 187, 20);
+  background-color: var(--fc-dimmed);
+}
+
+.resume_section2_button button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }

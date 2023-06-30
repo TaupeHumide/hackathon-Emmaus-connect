@@ -47,6 +47,7 @@
   border-radius: 7px;
   border: none;
   transition: transform 200ms ease-in-out;
+  background-color: white;
 }
 
 .popup_btn:hover {

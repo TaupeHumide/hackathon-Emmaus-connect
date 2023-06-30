@@ -1,10 +1,10 @@
 import "./MyEstimates.css";
-import iPhone11 from "/iPhone11.jpeg";
-import redmi9 from "/redmiNote9Pro.jpeg";
-import galaxyS7 from "/galaxyTabS7.jpeg";
-import fireHD from "/fireHD8.jpeg";
-import rog from "/rogZephyrusG14.jpeg";
-import mbka from "/macBookAirProM1.jpeg";
+import iPhone11 from "/iPhone11.png";
+import redmi9 from "/redmiNote9Pro.png";
+import galaxyS7 from "/galaxyTabS7.png";
+import fireHD from "/fireHD8.png";
+import rog from "/rogZephyrusG14.png";
+import mbka from "/macBookAirProM1.png";
 
 export default function myEstimates() {
   const phone = [
@@ -78,19 +78,25 @@ export default function myEstimates() {
 
   return (
     <div className="main-card-container">
-      {phone.map((item, index) => (
-        <div key={index} className="card">
-          <img src={item.img} alt="item" className="phone-img" />
-          <h3 className="card-title">{item.marque}</h3>
-          <p className="e-model">Modèle: {item.modèle}</p>
-          <p className="e-ram">Ram: {item.ram} GB</p>
-          <p className="e-memory">Mémoire: {item.mémoire} GB</p>
-          <p className="e-antutu">Antutu: {item.antutu}</p>
-          <p className="e-screen">Ecran: {item.screen} pouces</p>
-          <p className="e-pond">Pond: {item.pond}</p>
-          <p className="e-total-pond">Total Pond: {item.totalPond}</p>
-        </div>
-      ))}
+      <section className="myestimate_section1">
+        {" "}
+        <h1>Mes estimations</h1>
+      </section>
+      <section className="myestimate_section2">
+        {phone.map((item, index) => (
+          <div key={index} className="card">
+            <img src={item.img} alt="item" className="phone-img" />
+            <h3 className="card-title">{item.marque}</h3>
+            <p className="e-model">Modèle: {item.modèle}</p>
+            <p className="e-ram">Ram: {item.ram} GB</p>
+            <p className="e-memory">Mémoire: {item.mémoire} GB</p>
+            <p className="e-antutu">Antutu: {item.antutu}</p>
+            <p className="e-screen">Ecran: {item.screen} pouces</p>
+            <p className="e-pond">Pond: {item.pond}</p>
+            <p className="e-total-pond">Total Pond: {item.totalPond}</p>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }

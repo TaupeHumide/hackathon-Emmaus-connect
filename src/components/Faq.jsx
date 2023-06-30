@@ -2,26 +2,22 @@ import "./Faq.css";
 
 function Faq() {
   return (
-    <div className="background-image">
-      <div className="faq_content">
-        <section className="faq_img">
-          <img src="/faq_img3.jpg" alt="faq image cover" />
-          <h1>Des Questions ?</h1>
-        </section>
+    <div className="faq_content">
+      <section className="faq_img">
+        {/* <img src="/faq_img3.jpg" alt="faq image cover" /> */}
+        <h1>Des Questions ?</h1>
+      </section>
+      <section className="faq_section_main_content">
         <section className="faq_searchbar">
           <div class="flexbox">
             <div class="search">
               <div>
-                <input
-                  type="text"
-                  placeholder="Posez votre question . . ."
-                  required
-                />
+                <input type="text" placeholder="Search . . ." required />
               </div>
             </div>
           </div>
         </section>
-        <section className="faq_content">
+        <section className="faq_content2">
           <div className="faq_content_div">
             <h2>FAQ - Utilisation de l'outil emmaus</h2>
 
@@ -83,7 +79,7 @@ function Faq() {
             </p>
           </div>
         </section>
-      </div>
+      </section>
     </div>
   );
 }
