@@ -27,6 +27,8 @@
   color: var(--button-color);
   border-bottom: 1px solid;
   font-size: 2.5em;
+  margin-left: -15%;
+  margin-top: -5%;
 }
 
 .estimate_button:hover {

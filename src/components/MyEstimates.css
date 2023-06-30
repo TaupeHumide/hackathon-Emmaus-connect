@@ -1,7 +1,31 @@
 .main-card-container {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* flex-direction: column; */
+  height: 72vh;
+  gap: 20em;
+  margin: 2vh 0 8vh 0;
+}
+
+.myestimate_section1 {
+  color: var(--button-color);
+  border-bottom: 1px solid;
+  font-size: 2em;
+  width: 40%;
+  margin-left: 4%;
+  margin-top: -5%;
+}
+
+.myestimate_section1 h1 {
+  white-space: nowrap;
+}
+
+.myestimate_section2 {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 45% 0 0 0;
 }
 
 .card {
