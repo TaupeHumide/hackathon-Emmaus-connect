@@ -19,7 +19,7 @@ body {
   background-color: var(--background-color);
 }
 
-.container {
+.login_container {
   margin-top: 9vh;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@ body {
   background: var(--button-color);
   font-size: 1.5vh;
   margin-top: 4vh;
-  padding: 1.8vh 2vh;
+  padding: 2vh 2vh;
   border-radius: 26px;
   text-transform: uppercase;
   font-weight: 500;

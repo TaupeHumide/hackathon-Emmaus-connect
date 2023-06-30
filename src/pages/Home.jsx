@@ -43,42 +43,42 @@ export default function Login() {
   };
 
   return (
-    <div className='container'>
-      <div className='screen'>
-        <div className='screen-content'>
-          <form className='login' onSubmit={handleSubmit}>
-            <img className='logo' src={logo} alt='logo emmaus' />
-            <div className='login-field'>
-              <i className='login-icon fas fa-user' />
+    <div className="login_container">
+      <div className="screen">
+        <div className="screen-content">
+          <form className="login" onSubmit={handleSubmit}>
+            <img className="logo" src={logo} alt="logo emmaus" />
+            <div className="login-field">
+              <i className="login-icon fas fa-user" />
               <input
-                type='text'
-                className='login-input'
+                type="text"
+                className="login-input"
                 value={username}
                 placeholder="Nom d'utilisateur"
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
-            <div className='login-field'>
-              <i className='login-icon fas fa-lock' />
+            <div className="login-field">
+              <i className="login-icon fas fa-lock" />
               <input
-                type='password'
-                className='login-input'
+                type="password"
+                className="login-input"
                 value={password}
-                placeholder='Mot de passe'
+                placeholder="Mot de passe"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <button
-              type='submit'
-              className='button login-submit'
+              type="submit"
+              className="button login-submit"
               data-hover="Let's Go!!"
             >
-              <div className='button-text'>Se connecter</div>
+              <div className="button-text">Se connecter</div>
             </button>
           </form>
         </div>
       </div>
-      <div className='home_img' ref={homeImgRef} style={backgroundStyle}></div>
+      <div className="home_img" ref={homeImgRef} style={backgroundStyle}></div>
     </div>
   );
 }
