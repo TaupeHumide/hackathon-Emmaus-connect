@@ -5,7 +5,7 @@ const calculate = (item) => {
   const valS = RefValS[item.stockage];
   const total = item.indiceAntutu + valM + valS;
 
-  const pondTotal = total * (1 + item.ponderation);
+  const pondTotal = total + item.ponderation / 100;
   console.log(pondTotal);
   const cat = Categories.find(
     ({ min, max }) => pondTotal >= min && pondTotal < max

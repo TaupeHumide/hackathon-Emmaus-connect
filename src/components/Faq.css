@@ -3,10 +3,10 @@
 
 .faq_content {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  /* gap: 4em; */
+  gap: 4em;
   margin: 2% 0;
 }
 
@@ -14,14 +14,14 @@
 ////////////////      Section 1    /////////////
 ////////////////////////////////////////////////*/
 
-.faq_img {
+/* .faq_img {
   display: flex;
   align-items: center;
   background-color: var(--button-color);
   height: 40vh;
   width: 70%;
   border-radius: 10px;
-}
+} */
 
 .faq_img img {
   height: 40vh;
@@ -29,11 +29,11 @@
 }
 
 .faq_img h1 {
-  color: white;
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 2.7rem;
-  font-family: "Merriweather Sans", sans-serif;
+  color: var(--button-color);
+  border-bottom: 1px solid;
+  font-size: 2.5em;
+  margin-left: 15%;
+  margin-top: -8em;
 }
 
 /*////////////////////////////////////////////////
@@ -109,6 +109,10 @@
 /////////////    Section 3 faq   //////////
 ////////////////////////////////////////////////*/
 
+.faq_content2 {
+  width: 100%;
+}
+
 .faq_content_div {
   display: flex;
   flex-direction: column;
@@ -120,3 +124,17 @@
   align-self: center;
   margin-bottom: 4%;
 }
+
+.faq_section_main_content {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+}
+
+/* .faq_searchbar {
+  width: 40%;
+}
+
+.faq_content2 {
+  width: 60%;
+} */

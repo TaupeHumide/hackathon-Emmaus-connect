@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "/Logo_emmaus_connect2.png";
 import "./Navbar.css";
@@ -6,7 +7,7 @@ import "./Navbar.css";
 function Navbar({ setIsOpen }) {
   const links = [
     { path: "/Estimate", text: "Nouvelle estimation" },
-    { path: "/myEstimate", text: "Mes estimations" },
+    { path: "/myEstimates", text: "Mes estimations" },
     { path: "/stock", text: "Stock" },
     { path: "/faq", text: "FAQ" },
   ];
@@ -117,3 +118,7 @@ function Navbar({ setIsOpen }) {
   );
 }
 export default Navbar;
+
+Navbar.propTypes = {
+  setIsOpen: PropTypes.func.isRequired,
+};
