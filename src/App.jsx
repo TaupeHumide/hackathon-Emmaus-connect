@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
-import Estimate from "./components/Estimate";
+import Estimate from "./components/Estimation";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Faq from "./components/Faq";
