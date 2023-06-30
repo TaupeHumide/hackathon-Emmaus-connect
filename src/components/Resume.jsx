@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import { Categories } from "./RefTable";
 import "./Resume.css";
 
@@ -28,6 +28,12 @@ function Resume() {
     categorie: searchParams.get("categorie") ?? "",
     pondTotal: searchParams.get("pondTotal") ?? "",
   });
+
+  const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate("/estimate");
+  };
 
   const infos = {
     0: {
@@ -107,7 +113,7 @@ function Resume() {
         </div>
         <div className="resume_section2_button">
           <button> Imprimer</button>
-          <button>Valider</button>
+          <button onClick={handleSubmit}>Valider</button>
         </div>
       </section>
     </div>
