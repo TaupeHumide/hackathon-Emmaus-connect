@@ -5,8 +5,8 @@ import "./Navbar.css";
 
 function Navbar({ setIsOpen }) {
   const links = [
-    { path: "/", text: "Nouvelle estimation" },
-    { path: "/myEstimate", text: "Mes estimations" },
+    { path: "/estimate", text: "Nouvelle estimation" },
+    { path: "/myEstimates", text: "Mes estimations" },
     { path: "/stock", text: "Stock" },
     { path: "/faq", text: "FAQ" },
   ];
