@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { Categories } from "./RefTable";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Resume.css";
 
 function objectToSearchParams(object) {
@@ -32,6 +34,16 @@ function Resume() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
+    toast.success("Saisie validée avec succés 👋 ", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     navigate("/estimate");
   };
 
