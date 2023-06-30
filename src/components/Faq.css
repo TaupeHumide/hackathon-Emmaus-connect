@@ -83,6 +83,7 @@
   background: transparent;
   width: 35vw;
   height: 100%;
+  margin-left: -10rem;
   padding: 10px;
   border: solid 3px var(--hover-button-color);
   outline: none;
@@ -114,6 +115,7 @@
   flex-direction: column;
   gap: 1.5em;
   color: var(--hover-button-color);
+  padding: 2rem;
 }
 
 .faq_content_div h2 {

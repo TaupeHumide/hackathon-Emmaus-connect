@@ -16,7 +16,10 @@
 }
 
 body {
-  background-color: var(--background-color);
+  background-image: url("https://img.freepik.com/photos-gratuite/beau-coup-lunettes-optiques-tasse-table-fond-blanc-espace-pour-texte_181624-31634.jpg?w=740&t=st=1688083343~exp=1688083943~hmac=1491c7e38be749ed933f8bd315c87f28f8ab27f1a6eb63d12f1635d90c02e34a");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgb(248, 243, 237);
 }
 
 .login_container {

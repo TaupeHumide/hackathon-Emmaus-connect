@@ -25,7 +25,7 @@
 .laptop-form-container {
   width: 80%;
   max-width: 600px;
-  margin: 0 auto;
+  margin-right: -10rem;
   padding: 20px;
   border: 2px solid var(--yellow-connect);
   border-radius: 8px;
