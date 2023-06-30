@@ -113,7 +113,7 @@ export default function Form() {
           <img src="/phone_icon.jpg" alt="icone smartphone" />
           <form className="phone-form-input" onSubmit={handleSubmit}>
             <br />
-            <label htmlFor="marque">Marque:</label>
+            <label htmlFor="marque">Marque</label>
             &nbsp;
             <select
               id="marque"
@@ -132,7 +132,7 @@ export default function Form() {
               <option value="Vivo">Vivo</option>
             </select>
             <br />
-            <label htmlFor="model">Modèle:</label> &nbsp;
+            <label htmlFor="model">Modèle</label> &nbsp;
             <input
               id="model"
               placeholder="Modèle"
@@ -164,7 +164,7 @@ export default function Form() {
               <option value="Vivo X50 Pro" />
             </datalist>
             <br />
-            <label htmlFor="ram">RAM:</label> &nbsp;
+            <label htmlFor="ram">RAM</label> &nbsp;
             <select
               id="ram"
               type="text"
@@ -195,7 +195,7 @@ export default function Form() {
               <option value="96">96 Go</option>
             </select>
             <br />
-            <label htmlFor="stockage">Stockage:</label> &nbsp;
+            <label htmlFor="stockage">Stockage</label> &nbsp;
             <select
               id="stockage"
               placeholder="stockage"
@@ -227,7 +227,7 @@ export default function Form() {
               <option value="8000">8 To</option>
             </select>
             <br />
-            <label htmlFor="indiceAntutu">Indice Antutu:</label> &nbsp;
+            <label htmlFor="indiceAntutu">Indice Antutu</label> &nbsp;
             <select
               id="indiceAntutu"
               type="text"
@@ -265,7 +265,7 @@ export default function Form() {
               <option value="287">950 000</option>
             </select>
             <br />
-            <label htmlFor="ponderation">Pondération:</label> &nbsp;
+            <label htmlFor="ponderation">Pondération</label> &nbsp;
             <select
               id="ponderation"
               type="text"

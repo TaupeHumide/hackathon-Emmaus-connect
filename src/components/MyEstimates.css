@@ -36,7 +36,7 @@
   width: 23vw;
   padding: 10px;
   margin: 10px;
-  background-color: rgb(242, 237, 228);
+  background-color: rgb(242, 237, 228, 0.2);
 }
 
 .card-title {

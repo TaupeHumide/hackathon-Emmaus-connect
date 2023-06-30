@@ -12,13 +12,13 @@ function Estimate() {
       <h1 className="estimate_title">Nouvelle Estimation </h1>
       <div className="estimate_div_button">
         <button className="estimate_button" onClick={handleButtonClick}>
-          <img src="../../public/desktop_icon.jpg" alt="" />
+          <img src="/desktop_icon.jpg" alt="" />
         </button>
         <button className="estimate_button" onClick={handleButtonClick}>
-          <img src="../../public/tablet_icon.jpg" alt="" />
+          <img src="/tablet_icon.jpg" alt="" />
         </button>
         <button className="estimate_button" onClick={handleButtonClick}>
-          <img src="../../public/phone_icon.jpg" alt="" />
+          <img src="/phone_icon.jpg" alt="" />
         </button>
       </div>
     </div>

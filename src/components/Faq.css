@@ -3,7 +3,6 @@
 
 .faq_content {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   gap: 4em;
@@ -40,13 +39,11 @@
 ////////////////////////////////////////////////*/
 
 .faq_searchbar {
-  height: 15vh;
+  height: vh;
   width: 100%;
   margin: 2% 0 4vh 0;
-  /* background-color: rgb(182, 182, 52); */
 }
 .flexbox {
-  /* background: linear-gradient(155deg, #55c7ed, #2bb3e0, #3bc1ed); */
   width: 100%;
   height: 100%;
   display: flex;
@@ -54,27 +51,6 @@
   align-items: center;
   font-family: Roboto, sans-serif;
 }
-
-/* .search {
-  margin: 20px;
-} */
-
-/* .search > div {
-  display: inline-block;
-  position: relative; */
-/* filter: drop-shadow(0 1px #ffffff); */
-/* } */
-
-/* .search > div:after {
-  content: "";
-  background: var(--hover-button-color);
-  width: 3px;
-  height: 15px;
-  position: absolute;
-  top: 55%;
-  right: -10%;
-  transform: rotate(135deg);
-} */
 
 .search > div > input {
   color: var(--hover-button-color);
@@ -85,24 +61,15 @@
   margin-left: -10rem;
   border: solid 3px var(--hover-button-color);
   outline: none;
-  border-radius: 35px;
+  border-radius: 20px;
   transition: width 0.5s;
 }
 
-/* .search > div > input:placeholder {
-  color: var(---button-color);
-  opacity: 0;
-   transition: opacity 150ms ease-out; 
-} */
-
-/* .search > div > input:focus::placeholder {
-  opacity: 1;
+.faq_searchbar input::placeholder {
+  color: rgba(2, 4, 117, 0.527);
+  padding: 3%;
+  font-size: 0.8em;
 }
-
-.search > div > input:focus,
-.search > div > input:not(:placeholder-shown) {
-  width: 25vw;
-} */
 
 /*////////////////////////////////////////////////
 /////////////    Section 3 faq   //////////
@@ -132,10 +99,10 @@
   margin-bottom: 4%;
 }
 
-/* .faq_searchbar {
-  width: 40%;
+.faq_searchbar {
+  margin: 45px 0 15vh 9%;
 }
 
-.faq_content2 {
+/*.faq_content2 {
   width: 60%;
 } */
