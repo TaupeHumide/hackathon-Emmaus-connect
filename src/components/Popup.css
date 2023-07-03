@@ -11,11 +11,10 @@
 
 .box {
   position: relative;
-  background-color: var(--button-color);
+  background-color: #233d8de8;
   width: 35%;
   height: 25%;
   min-height: 150px;
-  border: 1px solid #062964;
   border-radius: 8px;
   margin: 35vh auto;
   display: flex;

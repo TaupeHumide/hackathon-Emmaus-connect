@@ -34,7 +34,7 @@ function Resume() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    toast.info("Saisie validée avec succés 👋 ", {
+    toast.info("Saisie validée avec succés 🎉 ", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
