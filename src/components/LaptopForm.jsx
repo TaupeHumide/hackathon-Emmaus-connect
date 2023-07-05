@@ -104,7 +104,10 @@ export default function LaptopForm() {
     storagePoints: parseInt(storagePoints ?? "0"),
   });
   return (
-    <div>
+    <div className="laptop-form-main-div">
+      <div className="laptop-form">
+        <h1 className="laptop-form-title">Formulaire Ordinateur</h1>
+      </div>
       <div className="laptop-container">
         <div className="laptop-form-container">
           <img src="/desktop_icon.jpg" alt="icone ordinateur portable" />

@@ -1,4 +1,4 @@
-.button-previous {
+/* .button-previous {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-}
+} */
 
 .phone-container,
 .tablet-container,
@@ -17,9 +17,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
   margin-top: 10%;
-  margin-bottom: 30vh;
+  margin-bottom: 30dvh;
   color: var(--hover-button-color);
 }
 
@@ -51,39 +51,61 @@
 }
 
 .phone-container input[type="text"],
+.laptop-container input[type="text"],
+.tablet-container input[type="text"],
 select {
   width: 100%;
   padding: 5px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.phone-container button[type="submit"] {
+.phone-container button[type="submit"],
+.laptop-container button[type="submit"],
+.tablet-container button[type="submit"] {
   padding: 10px 20px;
   color: #fff;
   border: none;
   cursor: pointer;
+  background-color: var(--yellow-connect);
+  border-radius: 4px;
+  border: thin solid var(--button-color);
 }
-.phone-container select {
+.phone-container select,
+.laptop-container select,
+.tablet-container select {
   border-radius: 5px;
   max-width: 70%;
   text-align: center;
 }
-.phone-container input#model {
+input#model {
   max-width: 70%;
+  border: thin solid var(--button-color);
+  font-size: medium;
 }
 .phone-form-input > *,
 .laptop-form-input > *,
 .tablet-form-input > * {
   margin-bottom: 10px;
 }
-.form-submit-button {
-  background-color: var(--yellow-connect);
-  border-radius: 4px;
-}
+/* button.form-submit-button {
+  margin: 0px 0px 10px;
+  padding: 10px 20px; */
+/* } */
 div.phone-form-container,
 div.tablet-form-container,
 div.laptop-form-container {
-  margin-top: -20px;
+  margin-right: -45%;
+  margin-top: -20%;
+}
+h1.phone-form-title,
+h1.tablet-form-title,
+h1.laptop-form-title {
+  color: var(--button-color);
+  font-size: 2.5em;
+  margin-left: 8%;
+  margin-top: 17%;
+  text-decoration: underline;
 }
 
 .phone-form-container img {
@@ -105,4 +127,30 @@ div.laptop-form-container {
   border: none;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border: thin solid var(--button-color);
+  text-align: center;
+  font-size: medium;
+  background-color: var(--yellow-dimmed-connect);
+}
+@media screen and (min-width: 900px) {
+  div.phone-form-container,
+  div.tablet-form-container,
+  div.laptop-form-container {
+    margin-top: -60%;
+    margin-right: -45%;
+  }
+}
+@media screen and (max-width: 599px) {
+  div.phone-form-container,
+  div.tablet-form-container,
+  div.laptop-form-container {
+    margin-top: 14%;
+    margin-right: 5%;
+  }
+  h1.phone-form-title,
+  h1.tablet-form-title,
+  h1.laptop-form-title {
+    font-size: 1.8em;
+    margin-top: 4%;
+  }
 }
