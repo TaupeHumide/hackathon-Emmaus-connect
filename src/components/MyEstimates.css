@@ -1,0 +1,77 @@
+.main-card-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* flex-direction: column; */
+  height: 72vh;
+  gap: 20em;
+  margin: 0 0 8vh 0;
+}
+
+.myestimate_section1 {
+  color: var(--button-color);
+  border-bottom: 1px solid;
+  font-size: 2em;
+  width: 40%;
+  margin-left: 4%;
+  margin-top: -5%;
+}
+
+.myestimate_section1 h1 {
+  white-space: nowrap;
+}
+
+.myestimate_section2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 45% 0 0 0;
+}
+
+.card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  height: 100%;
+  width: 23vw;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(242, 237, 228, 0.2);
+}
+
+.card-title {
+  margin: 0px;
+}
+
+div.card {
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.cards {
+  margin: auto;
+}
+h3.card-title {
+  text-align: center;
+  padding-bottom: 2px;
+  padding-top: 4px;
+}
+.card > p {
+  font-size: small;
+  padding: 2px;
+}
+img {
+  height: 150px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+.e-model {
+  font-weight: 600;
+}
+@media screen and (max-width: 1024px) {
+  img {
+    height: 100px;
+    width: auto;
+  }
+}

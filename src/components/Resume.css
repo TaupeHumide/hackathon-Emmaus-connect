@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Merriweather+Sans&display=swap");
+
+.resume_content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  padding-top: 10vh;
+  font-family: "Jost", sans-serif;
+  color: var(--hover-button-color);
+}
+
+/*////////////////////////////////////////////////
+////////////////      Section 1     //////////////
+////////////////////////////////////////////////*/
+
+.resume_section1 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 62%;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.resume_section1_titre {
+  display: flex;
+  justify-content: center;
+}
+
+.resume_section1_spec {
+  display: flex;
+  gap: 50px;
+}
+
+.resume_section1_spec_liste h4 {
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.resume_section1_spec_value p {
+  margin-bottom: 15px;
+}
+
+.resume_price_h4 {
+  margin-top: 30px;
+  font-weight: 900;
+  font-size: 1.2em;
+  text-align: center;
+}
+.resume_price_p {
+  display: flex;
+  justify-content: center;
+  color: var(--button-color);
+  margin-top: 30px;
+  font-size: 1.4em;
+  font-weight: 800;
+  text-align: end;
+  border: solid 1px var(--button-color);
+  border-radius: 5px;
+}
+
+/*/ ///////////////////////////////////////////////
+////////////////      Section 2      /////////////
+////////////////////////////////////////////////*/
+
+.resume_section2 {
+  display: flex;
+  flex-direction: column;
+  margin-right: -9rem;
+  gap: 10px;
+}
+
+.resume_section2_galerieImage {
+  display: flex;
+}
+
+.resume_section2 img {
+  width: 80%;
+  height: 35vh;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.resume_section2_titre {
+  align-self: center;
+  margin-bottom: 3%;
+}
+
+.resume_section2_button {
+  align-self: center;
+  margin-top: 10vh;
+  width: 60%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.resume_section2_button button {
+  height: 100%;
+  width: 40%;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: transform 200ms ease-in-out;
+}
+
+.resume_section2_button button:first-child {
+  background-color: var(--yellow-connect);
+}
+
+.resume_section2_button button:nth-child(2) {
+  background-color: var(--fc-dimmed);
+}
+
+.resume_section2_button button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

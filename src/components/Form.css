@@ -1,0 +1,108 @@
+.button-previous {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.button-next {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.phone-container,
+.tablet-container,
+.laptop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 10%;
+  margin-bottom: 30vh;
+  color: var(--hover-button-color);
+}
+
+.phone-form-container,
+.tablet-form-container,
+.laptop-form-container {
+  width: 80%;
+  max-width: 600px;
+  margin-right: -10rem;
+  padding: 20px;
+  border: 2px solid var(--yellow-connect);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.phone-form-input,
+.laptop-form-input,
+.tablet-form-input {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone-container label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.phone-container input[type="text"],
+select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.phone-container button[type="submit"] {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.phone-container select {
+  border-radius: 5px;
+  max-width: 70%;
+  text-align: center;
+}
+.phone-container input#model {
+  max-width: 70%;
+}
+.phone-form-input > *,
+.laptop-form-input > *,
+.tablet-form-input > * {
+  margin-bottom: 10px;
+}
+.form-submit-button {
+  background-color: var(--yellow-connect);
+  border-radius: 4px;
+}
+div.phone-form-container,
+div.tablet-form-container,
+div.laptop-form-container {
+  margin-top: -20px;
+}
+
+.phone-form-container img {
+  border-radius: 7%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.phone-container input,
+.tablet-container input,
+.laptop-container input {
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.phone-container select,
+.tablet-container select,
+.laptop-container select {
+  border: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
