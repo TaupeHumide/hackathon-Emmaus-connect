@@ -41,9 +41,9 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    toast.success("Content de vous revoir 👋 ", {
+    toast.info("Content de vous revoir 👋 ", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -63,7 +63,7 @@ export default function Login() {
             <div className="login-field">
               <i className="login-icon fas fa-user" />
               <input
-                type="text"
+                type="email"
                 className="login-input"
                 value={username}
                 placeholder="Nom d'utilisateur"

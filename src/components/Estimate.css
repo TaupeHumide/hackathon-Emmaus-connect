@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* flex-direction: column; */
   height: 72vh;
   gap: 6vh;
   margin: 2vh 0 8vh 0;

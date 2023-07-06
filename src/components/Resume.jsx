@@ -34,7 +34,7 @@ function Resume() {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    toast.success("Saisie validée avec succés 👋 ", {
+    toast.info("Saisie validée avec succés 🎉 ", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -82,7 +82,7 @@ function Resume() {
     <div className=" resume_content">
       <section className="resume_section1">
         <div className="resume_section1_titre">
-          <h1>Résumé de L'appareil :</h1>
+          <h1>Résumé de L'appareil </h1>
         </div>
         <div className="resume_section1_spec">
           <div className="resume_section1_spec_liste">
@@ -103,14 +103,14 @@ function Resume() {
             <p>{item.ponderation ?? "Inconnue"}</p>
             <p>{item.categorie ?? "Inconnue"}</p>
             <p>{`${cat.min}   -   ${cat.max} €` ?? "Inconnue"}</p>
-            <p className="resume_price_p">{item.pondTotal ?? "Inconnue"}</p>
+            <p className="resume_price_p">{item.pondTotal ?? "Inconnue"} €</p>
           </div>
         </div>
       </section>
 
       <section className="resume_section2">
         <div className="resume_section2_titre">
-          <h3>Galerie d'images : </h3>
+          <h3>Galerie d'images </h3>
         </div>
         <div className="resume_section2_galerieImage">
           <div className="resume_section2_image">

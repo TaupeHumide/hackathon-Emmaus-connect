@@ -4,7 +4,6 @@ function Faq() {
   return (
     <div className="faq_content">
       <section className="faq_img">
-        {/* <img src="/faq_img3.jpg" alt="faq image cover" /> */}
         <h1>Des Questions ?</h1>
       </section>
       <section className="faq_section_main_content">
@@ -14,7 +13,7 @@ function Faq() {
               <div>
                 <input
                   type="text"
-                  placeholder="Posez votre question"
+                  placeholder="Posez votre question.... "
                   required
                 />
               </div>
