@@ -104,7 +104,10 @@ export default function Form() {
     storagePoints: parseInt(storagePoints ?? "0"),
   });
   return (
-    <div>
+    <div className="tablet-form-main-div">
+      <div className="tablet-form">
+        <h1 className="tablet-form-title">Formulaire tablette</h1>
+      </div>
       <div className="tablet-container">
         <div className="tablet-form-container">
           <img src="/tablet_icon.jpg" alt="icone tablette" />

@@ -107,7 +107,10 @@ export default function Form() {
   });
 
   return (
-    <div>
+    <div className="phone-form-main-div">
+      <div className="phone-form">
+        <h1 className="phone-form-title">Formulaire téléphone</h1>
+      </div>
       <div className="phone-container">
         <div className="phone-form-container">
           <img src="/phone_icon.jpg" alt="icone smartphone" />

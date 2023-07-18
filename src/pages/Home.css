@@ -5,8 +5,9 @@
   --button-color: #233d8d;
   --hover-button-color: #272350;
   --background-color: rgba(249, 249, 249, 1);
-  --fc-dimmed: #039b9d;
+  --fc-dimmed: #039b9d8e;
   --yellow-connect: #feab1d;
+  --yellow-dimmed-connect: #feab1dc8;
 }
 
 * {
