@@ -29,6 +29,7 @@
   width: 80%;
   max-width: 600px;
   margin-right: -10rem;
+  margin-top: 250px;
   padding: 20px;
   border: 2px solid var(--yellow-connect);
   border-radius: 8px;
