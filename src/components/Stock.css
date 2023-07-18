@@ -11,4 +11,5 @@
   color: var(--hover-button-color);
   font-size: 3em;
   margin-top: -15%;
+  color: var(--button-color);
 }

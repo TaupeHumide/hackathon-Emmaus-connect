@@ -18,7 +18,7 @@
   margin-right: -10rem;
   margin-top: 250px;
   padding: 20px;
-  border: 2px solid var(--yellow-connect);
+  border: 2px solid var(--button-color);
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -55,9 +55,9 @@ select {
   color: #fff;
   border: none;
   cursor: pointer;
-  background-color: var(--yellow-connect);
+  background-color: var(--button-color);
   border-radius: 4px;
-  border: thin solid var(--button-color);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .phone-container select,
 .laptop-container select,
@@ -68,8 +68,8 @@ select {
 }
 input#model {
   max-width: 70%;
-  border: thin solid var(--button-color);
   font-size: medium;
+  border-radius: 5px;
 }
 .phone-form-input > *,
 .laptop-form-input > *,
@@ -112,16 +112,14 @@ h1.laptop-form-title {
   border: none;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  border: thin solid var(--button-color);
   text-align: center;
   font-size: medium;
-  background-color: var(--yellow-dimmed-connect);
 }
 @media screen and (min-width: 900px) {
   div.phone-form-container,
   div.tablet-form-container,
   div.laptop-form-container {
-    margin-top: -60%;
+    margin-top: -40%;
     margin-right: -45%;
   }
 }
